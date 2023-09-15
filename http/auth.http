@@ -1,0 +1,103 @@
+# @host = http://192.168.0.110:8000/api/v1
+@host = https://dev-api.maway.dk/api/v1
+
+# @host = http://maway.atiar.info/api/v1
+@role = school
+
+@token = "asd"
+
+### Instructor Login
+POST {{host}}/auth/login HTTP/1.1
+content-type: application/json
+role: {{ role }}
+
+{
+    "email": "arafatins@g.com",
+    "password": "password"
+}
+
+
+### Instructor Registration
+POST {{ host }}/auth/register HTTP/1.1
+content-type: application/json
+role: {{role}}
+
+{
+    "cvr": "12323212",
+    "name": "Teacher Ins",
+    "email": "tamjedpace+1@gmail.com",
+    "password": "1234",
+    "password_confirmation": "1234"
+}
+
+
+### Logout
+POST {{host}}/auth/logout HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### verify OTP
+POST {{ host }}/auth/verify HTTP/1.1
+content-type: application/json
+
+{
+    "email": "school101@g.com",
+    "otp": "8036"
+}
+
+### resend OTP
+POST {{ host }}/auth/resend-otp HTTP/1.1
+content-type: application/json
+
+{
+    "email": "marufahamed26@gmail.com"
+}
+
+### forget password resend OTP
+POST {{ host }}/auth/forgot-password HTTP/1.1
+content-type: application/json
+role: {{role}}
+
+{
+    "email": "marufahamed26+12311@gmail.com",
+    "forget": true
+}
+
+### forget password OTP verify
+POST {{ host }}/auth/forgot-password-otp-verify HTTP/1.1
+content-type: application/json
+
+{
+    "email": "marufahamed26+12311@gmail.com",
+    "otp": 5340,
+    "forget": true
+}
+
+
+### reset password
+POST {{ host }}/auth/reset-password HTTP/1.1
+content-type: application/json
+
+{
+    "token": "25144888",
+    "email": "marufahamed26+12311@gmail.com",
+    "password": "1234",
+    "password_confirmation": "1234"
+}
+###
+
+###
+# Logout
+POST {{host}}/auth/logout HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+accept: application/json
+
+###
+
+# Home
+GET {{host}}/auth/user HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+###

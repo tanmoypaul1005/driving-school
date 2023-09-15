@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "poppinsGoogleRegular";
+  font-weight: 400;
+  src: local("poppins"), url(./Fonts/Poppins/Poppins-Regular.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "poppinsGoogleMedium";
+  font-weight: 500;
+  src: local("poppins"), url(./Fonts/Poppins/Poppins-Medium.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "poppinsGoogleSemiBold";
+  font-weight: 600;
+  src: local("poppins"), url(./Fonts/Poppins/Poppins-Regular.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "poppinsGoogleBold";
+  font-weight: 700;
+  src: local("poppins"), url(./Fonts/Poppins/Poppins-Bold.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "poppinsGoogleExtraBold";
+  font-weight: 800;
+  src: local("poppins"),
+    url(./Fonts/Poppins/Poppins-ExtraBold.ttf) format("ttf");
+}
+
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'poppins';
+    /* scrollbar-gutter: stable; */
+    scrollbar-gutter: auto;
+  }
+
+  #root {
+    font-family: 'poppins';
+  }
+
+
+}
+
+.capitalize-first::first-letter {
+  text-transform: uppercase;
+}
+
+/* custom style fixes */
+.z-index-120 {
+  z-index: 120;
+}
+
+.z-index-130 {
+  z-index: 130;
+}
+
+.htmlText {
+  color: #74788A !important;
+}
+
+/* FOR ANT DESIGN MULTI SELECT */
+.my-select-container .ant-select .ant-select-selector {
+  border-radius: 20px;
+}
+
+.ant-select-selection-placeholder {
+  color: #333333;
+  font-size: 14px;
+}
+
+.force-white-text {
+  color: white !important;
+}
+
+.sidebar-expand-arrow-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.table-border-outer {
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #D1D0E2;
+  /* this draws the table border  */
+}
+
+.req-field:after {
+  content: " *";
+  color: #f66060;
+}
+
+.dashboard-box-shadow {
+  box-shadow: 0px 10px 30px rgba(180, 180, 180, 0.25);
+}
+
+.home-gradient {
+  background-image: linear-gradient(90deg, rgba(245, 61, 47, 0.1) -13.78%, rgba(169, 32, 142, 0.1) 17.31%, rgba(146, 43, 172, 0.1) 35.68%, rgba(96, 56, 223, 0.1) 61.09%, rgba(36, 167, 252, 0.1) 90.39%, rgba(34, 211, 253, 0.1) 100%);
+  filter: blur(125px);
+}
+
+.landing-btn-gradient {
+  background: linear-gradient(90deg, #F53D2F -13.78%, #A9208E 17.31%, #922BAC 35.68%, #6038DF 61.09%, #24A7FC 90.39%, #22D3FD 100%);
+}
+
+.landing-input-bg::placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.landing-input-bg {
+  background: rgba(217, 217, 217, 0.3);
+  backdrop-filter: blur(14px);
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/*                               CalendarView Style                               */
+/* ------------------------------------------------------------------------- */
+/* Change date color */
+
+
+.rbc-header {
+  color: #969696;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px;
+  text-align: left;
+  font-family: Poppins;
+  line-height: 23.8px;
+}
+
+.rbc-calendar {
+  border-radius: 8px;
+  /* Apply border radius to the calendar table */
+}
+
+.calendar-container {
+  border-radius: 10px;
+  /* Apply border radius to the container */
+}
+
+.rbc-month-view {
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rbc-month-row {
+  display: inline-table !important;
+  flex: 0 0 0 !important;
+  min-height: 137px !important;
+  padding-bottom: 5px;
+}
+
+.rbc-today {
+  background-color: #FFFFFF;
+  border: 0.7px solid #2257AA !important
+}
+
+.rbc-row.rbc-selected-row {
+  border: 0.5px solid #2257AA;
+}
+
+.calendar {
+  flex: 1;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/*                                Common Style                               */
+/* ------------------------------------------------------------------------- */
+.absolute-center {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+}
+
+.absolute-top {
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2
+}
+
+.absolute-start {
+  @apply absolute top-1/2 left-0 transform -translate-y-1/2
+}
+
+.absolute-end {
+  @apply absolute top-1/2 right-0 transform -translate-y-1/2
+}
+
+.absolute-right-top {
+  @apply absolute top-0 right-0
+}
+
+.absolute-left-top {
+  @apply absolute top-0 left-0
+}
+
+/* .custom-container {
+  @apply mx-2 sm: mx-4 md:mx-8 lg:mx-10 xl:mx-28
+} */
+
+.center {
+  @apply grid place-items-center
+}
+
+.x-center {
+  @apply flex justify-center items-center
+}
+
+.y-center {
+  @apply flex flex-col justify-center items-center
+}
+
+.cp {
+  @apply cursor-pointer
+}
+
+
+
+/* maway typography */
+.large_h1 {
+  @apply text-fs32 leading-[38.4px] font-fw600
+}
+
+.page_title {
+  @apply text-fs28 leading-[33.6px] font-fw600
+}
+
+.section_title {
+  @apply text-fs20 leading-[26px] font-fw600
+}
+
+.sub_title {
+  @apply text-fs16 leading-[20.8px] font-fw600
+}
+
+.button_text {
+  @apply text-fs16 leading-[18px] font-fw600
+}
+
+.body_text {
+  @apply text-fs14 leading-[23.8px] font-fw400
+}
+
+.important_text {
+  @apply text-fs14 leading-[21px] font-fw600
+}
+
+.small_body_text {
+  @apply text-fs12 leading-[18px] font-fw400
+}
+
+
+
+/* red: remove arrow buttons from all inputs that has type=number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+
+/* Ant TimePicker */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+a.ant-picker-now-btn {
+  font-size: 0;
+}
+
+a.ant-picker-now-btn:after {
+  content: "ABC";
+  font-size: 16px;
+  /* original font size */
+}
+
+.ant-picker-ok>button.ant-btn>span {
+  font-size: 0;
+}
+
+.ant-picker-ok>button.ant-btn {
+  font-size: 0;
+  background-color: #2257AA;
+}
+
+.ant-picker-ok>button.ant-btn>span:after {
+  content: "ok";
+  font-size: 14px;
+  /* original font size */
+}
